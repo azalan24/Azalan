@@ -199,14 +199,14 @@ header nav li:not(:last-child):hover::after {
     font-weight: bold; /* Poppins bold style for "Featured" */
     z-index: 1; /* Ensure the text is on top of the SVG */
 }
-
+/*
 .title span {
     font-family: 'Dancing Script', cursive;
     color: #fff;
     text-transform: lowercase;
     font-size: 3.5rem;
   
-}
+}*/
 
 
 
