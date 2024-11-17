@@ -25,8 +25,9 @@
         <ul class="navlist">
             <li><a href="#home">Home</a></li>
             <li><a href="#about-us">About</a></li>
+          <li><a href="menuwithheader.html" target="_blank">Menu</a></li>
 
-            <li><a href=".featured-items">Menu</a></li>
+       
             <li><a href="#reservation">Reservation</a></li>
             <li><a href="#contact" id="contactBtn">Contact Us</a></li>
         </ul>
@@ -44,12 +45,11 @@
     </section>
     <section class="featured-items">
       
-        <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1C3720" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,176C320,192,400,192,480,192C560,192,640,192,720,192C800,192,880,192,960,192C1040,192,1120,192,1200,202.7C1280,213,1360,235,1400,245.3L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> <h2 class="title">Featured <span>meals</span></h2>
-          
-        </div>
+      
 
+        <h2 class="title">Featured meals</h2>
         <div class="container">
+            
             <div class="item">
                 <h3 class="item-label">inasal-pecho</h3>
                 <img src="inasal.jpg" alt="Item 1">
@@ -68,85 +68,12 @@
         </div>
     </section>
     
-    <section id="about-us" class="about-us">
-        <div class="wave"></div>
-        <h1>About Us</h1>
-        <div class="about-content">
-            <div class="left-column">
-                <div class="text-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .
-                    </p>
-                </div>
-                <a href="#" class="learn-more">Learn More</a>
-            </div>
-            <div class="right-column">
-                <div class="images">
-                    <img src="squid.jpg" alt="Image 1" class="img-1">
-                    <img src="lomi.jpg" alt="Image 2" class="img-2">
-                    <img src="pakbet.png" alt="Image 3" class="img-3">
-                    <img src="inasal.jpg" alt="Image 4" class="img-4">
-                    
-                </div>
-            </div>
-           
-        </div>
-        <a href="#reservation" class="reserve-btn">See more</a>
-    </section>
+    
     
 
 
-    </section>
-    <section id="menu" class="section menu">Menu Section</section>
-    <section id="reservation" class="section reservation">Reservation Section</section>
-    <section id = "contact" class="contact-us-section">
-        <div class="column contact-form-column">
-            <h2>Get in Touch</h2>
-            <div class="formbox">
-                <form id="contactForm">
-                    <div class="name-container">
-                        <div class="input-container">
-                            <input type="text" id="firstName" name="firstName" required placeholder=" " />
-                            <label for="firstName">First Name</label>
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="lastName" name="lastName" required placeholder=" " />
-                            <label for="lastName">Last Name</label>
-                        </div>
-                    </div>
-                    
-                    <div class="input-container">
-                        <input type="email" id="userEmail" name="userEmail" required placeholder=" " />
-                        <label for="userEmail">Email</label>
-                    </div>
-                    <div class="input-container">
-                        <textarea id="userMessage" name="userMessage" rows="4" required placeholder=" "></textarea>
-                        <label for="userMessage">Message</label>
-                    </div>
-                    <button type="submit">Send</button>
-                    <span class="sending">Sending...</span>
-                    <div class="success-message">Your message has been sent successfully!</div>
-                </form>
-            </div>
-        </div>
-        
-            <div class="column info-column">
-                <h2>Contact Information</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac volutpat nulla.</p>
-                <div class="contact-info">
-                    <p><strong>Address:</strong> Pueblo de Panay Township</p>
-                    <p><strong>Contact Number:</strong> 098235923759</p>
-                    <p><strong>Email:</strong> azalankamayan@gmail.com</p>
-                </div>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+   
+           
     <script>
         // Scroll effect for header
         window.addEventListener('scroll', function() {
@@ -191,49 +118,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
-items.forEach(item => {
-    observer.observe(item); // Observe each item
-});
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const userInputFirstName = document.getElementById('firstName').value;
-    const userInputLastName = document.getElementById('lastName').value;
-    const userInputEmail = document.getElementById('userEmail').value;
-    const userInputMessage = document.getElementById('userMessage').value;
-
-    const confirmation = confirm("Are you sure you want to send this message?");
-    if (confirmation) {
-        const sendingIndicator = document.querySelector('.sending');
-        const successMessage = document.querySelector('.success-message');
-        sendingIndicator.style.display = 'inline'; 
-
-        setTimeout(() => {
-            submitContactForm(userInputFirstName, userInputLastName, userInputEmail, userInputMessage);
-            sendingIndicator.style.display = 'none'; 
-            successMessage.style.display = 'block'; 
-        }, 2000);
-    } else {
-        console.log("Message sending canceled.");
-    }
-});
-
-function submitContactForm(firstName, lastName, userEmail, userMessage) {
-    if (!firstName || !lastName || !userEmail || !userMessage) {
-        console.error("All fields are required.");
-        return;
-    }
-
-    const contactFormData = {
-        firstName: firstName,
-        lastName: lastName,
-        email: userEmail,
-        message: userMessage
-    };
-
-    console.log("Sending the following data to the server:", contactFormData);
-}
 </script>
 
 </body>
